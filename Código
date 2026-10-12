@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+void apresentacao()
+{
+    printf("fatorial");
+}
+
+int numero()
+{
+    bool erro;
+    int numero;
+    do
+    {
+        printf("\ndigite um numero: ");
+        scanf("%i",&numero);
+        erro=numero<0;
+        if (erro)
+        printf("\nDigite um numero amior que 0\n");
+    }while(erro);
+
+    return numero;
+}
+
+int fatorial2(int numero)
+
+{
+    int fatorial2=1;
+    for (int i=numero;i>=1;i--)
+    {
+        fatorial2=fatorial2*i;
+    }
+
+    return fatorial2;
+}
+
+void leiafatorial(int fatorial2,int numero)
+{
+    printf("o fatorial de %i e: %i",numero,fatorial2);
+}
+
+int main()
+
+{
+    apresentacao();
+    int a=numero();
+    int fatorial=fatorial2(a);
+    leiafatorial(fatorial,a);
+
+    return 0;
+}
